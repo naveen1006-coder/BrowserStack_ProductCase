@@ -9,10 +9,13 @@ import { SuccessPage } from '@/pages/SuccessPage';
 import { SprintHistoryPage } from '@/pages/SprintHistoryPage';
 
 function App() {
+    // Get base path from Vite's environment variable
+    const basePath = import.meta.env.BASE_URL || '/';
+    
     return (
         <ThemeProvider>
             <SprintProvider>
-                <Router>
+                <Router basename={basePath}>
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/strategy" element={<StrategyPage />} />
