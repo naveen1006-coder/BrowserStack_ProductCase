@@ -30,6 +30,13 @@ export function TicketCard({
     low: "Low",
   };
 
+  const priorityShadowStyles = {
+    high: "shadow-[-4px_0_6px_-1px_rgba(239,68,68,0.3),-2px_0_4px_-1px_rgba(239,68,68,0.2)] hover:shadow-[-6px_0_10px_-2px_rgba(239,68,68,0.4),-3px_0_6px_-1px_rgba(239,68,68,0.3)]",
+    medium:
+      "shadow-[-4px_0_6px_-1px_rgba(245,158,11,0.3),-2px_0_4px_-1px_rgba(245,158,11,0.2)] hover:shadow-[-6px_0_10px_-2px_rgba(245,158,11,0.4),-3px_0_6px_-1px_rgba(245,158,11,0.3)]",
+    low: "shadow-[-4px_0_6px_-1px_rgba(0,0,0,0.1),-2px_0_4px_-1px_rgba(0,0,0,0.06)] hover:shadow-[-6px_0_10px_-2px_rgba(0,0,0,0.15),-3px_0_6px_-1px_rgba(0,0,0,0.1)]",
+  };
+
   return (
     <AnimatePresence>
       {!isRejecting && (
@@ -46,10 +53,12 @@ export function TicketCard({
         >
           <Card
             className={cn(
-              "p-4 cursor-pointer hover:shadow-md transition-shadow border-l-4 !bg-white !border-neutral-200 !text-neutral-900",
-              ticket.priority === "high" && "border-l-danger-500",
-              ticket.priority === "medium" && "border-l-warning-500",
-              ticket.priority === "low" && "border-l-neutral-400",
+              "p-4 cursor-pointer transition-shadow border-l-4 !bg-white !text-neutral-900",
+              ticket.priority === "high" && "!border-l-danger-500",
+              ticket.priority === "medium" && "!border-l-warning-500",
+              ticket.priority === "low" && "!border-l-neutral-400",
+              !ticket.priority && "!border-neutral-200",
+              priorityShadowStyles[ticket.priority] || priorityShadowStyles.low,
               className
             )}
             onClick={() => onClick?.(ticket)}

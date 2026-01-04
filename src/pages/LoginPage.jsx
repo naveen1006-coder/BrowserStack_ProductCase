@@ -66,7 +66,7 @@ export function LoginPage() {
               <div>
                 <Label
                   htmlFor="email"
-                  className="text-neutral-700 font-semibold mb-2 block"
+                  className="!text-black font-semibold mb-2 block"
                 >
                   Email
                 </Label>
@@ -88,7 +88,7 @@ export function LoginPage() {
               <div>
                 <Label
                   htmlFor="password"
-                  className="text-neutral-700 font-semibold mb-2 block"
+                  className="!text-black font-semibold mb-2 block"
                 >
                   Password
                 </Label>
