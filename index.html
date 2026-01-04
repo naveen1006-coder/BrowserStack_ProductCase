@@ -4,14 +4,42 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/browserstack.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Align - AI-Native Sprint Planning Tool for BrowserStack" />
+    <meta
+      name="description"
+      content="Align - AI-Native Sprint Planning Tool for BrowserStack"
+    />
     <title>Align | AI Sprint Planning</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // This script handles the query parameter routing from 404.html redirects
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          // Remove 'index.html' from pathname if present, then add the decoded route
+          var pathname = l.pathname.replace(/\/index\.html$/, "") || "/";
+          window.history.replaceState(
+            null,
+            null,
+            pathname + (pathname.endsWith("/") ? "" : "/") + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

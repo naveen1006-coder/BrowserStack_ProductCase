@@ -3,20 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title>Align | AI Sprint Planning</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      var pathSegmentsToKeep = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
   </head>
   <body>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // Redirect 404 to index.html with route preserved in query string
+      var pathSegmentsToKeep = 1; // Keep repository name segment
+      var l = window.location;
+      var pathname = l.pathname;
+      
+      // Remove '404.html' from pathname if present
+      pathname = pathname.replace(/\/404\.html$/, '');
+      
+      // Split pathname into parts
+      var pathParts = pathname.split('/').filter(function(part) {
+        return part.length > 0;
+      });
+      
+      // Determine base path (repository name) and route
+      var basePath = '/';
+      var route = '';
+      
+      if (pathParts.length > 0) {
+        // First part is repository name (e.g., BrowserStack_ProductCase)
+        basePath = '/' + pathParts[0] + '/';
+        // Remaining parts are the route (e.g., strategy)
+        if (pathParts.length > 1) {
+          route = pathParts.slice(1).join('/');
+        }
+      }
+      
+      // Build redirect URL: /BrowserStack_ProductCase/index.html?/strategy
+      var redirectUrl = basePath + 'index.html';
+      if (route) {
+        redirectUrl += '?/' + route.replace(/&/g, '~and~');
+      }
+      if (l.search && l.search[1] !== '/') {
+        redirectUrl += (route ? '&' : '?') + l.search.slice(1).replace(/&/g, '~and~');
+      }
+      redirectUrl += l.hash;
+      
+      // Redirect to index.html
+      window.location.replace(redirectUrl);
+    </script>
   </body>
 </html>
 

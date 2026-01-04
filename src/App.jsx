@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { SprintProvider } from '@/context/SprintContext';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -11,6 +12,20 @@ import { SprintHistoryPage } from '@/pages/SprintHistoryPage';
 function App() {
     // Get base path from Vite's environment variable
     const basePath = import.meta.env.BASE_URL || '/';
+    
+    // Handle GitHub Pages SPA routing
+    // If there's a query parameter starting with '/', it means we were redirected from 404.html
+    React.useEffect(() => {
+        const l = window.location;
+        if (l.search[1] === '/') {
+            // Decode the route from query parameter
+            const decoded = l.search.slice(1).split('&').map(function(s) {
+                return s.replace(/~and~/g, '&');
+            }).join('?');
+            // Update the URL without reloading
+            window.history.replaceState(null, '', basePath + decoded + l.hash);
+        }
+    }, [basePath]);
     
     return (
         <ThemeProvider>
