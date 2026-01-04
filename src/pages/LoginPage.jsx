@@ -78,7 +78,7 @@ export function LoginPage() {
                     placeholder="you@browserstack.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-11 h-11 bg-neutral-50 border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:bg-white focus:border-primary-500 focus:ring-primary-100"
+                    className="pl-11 h-11 !bg-white !border-neutral-300 !text-neutral-900 !placeholder:text-neutral-400 focus:!bg-white focus:!border-primary-500 focus:!ring-primary-100"
                     aria-label="Email address"
                     required
                   />
@@ -100,7 +100,7 @@ export function LoginPage() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pl-11 h-11 bg-neutral-50 border-neutral-300 text-neutral-900 placeholder:text-neutral-400 focus:bg-white focus:border-primary-500 focus:ring-primary-100"
+                    className="pl-11 h-11 !bg-white !border-neutral-300 !text-neutral-900 !placeholder:text-neutral-400 focus:!bg-white focus:!border-primary-500 focus:!ring-primary-100"
                     aria-label="Password"
                     required
                   />
