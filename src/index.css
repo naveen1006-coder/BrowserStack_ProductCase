@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties from Design Tokens */
+:root {
+  --color-primary-50: #eef0f9;
+  --color-primary-100: #d4d9f0;
+  --color-primary-200: #a9b3e1;
+  --color-primary-300: #7e8dd2;
+  --color-primary-400: #5367c3;
+  --color-primary-500: #2B3990;
+  --color-primary-600: #232e73;
+  --color-primary-700: #1a2256;
+  --color-primary-800: #121739;
+  --color-primary-900: #090b1c;
+
+  --color-success-500: #10b981;
+  --color-warning-500: #f59e0b;
+  --color-danger-500: #ef4444;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --focus-ring: 0 0 0 2px var(--color-primary-500);
+}
+
+/* Dark mode color scheme */
+.dark {
+  color-scheme: dark;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+    line-height: 1.5;
+  }
+
+  /* Dark mode body - use html.dark for proper specificity */
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  /* Skip to content link - accessibility */
+  .skip-to-content {
+    @apply absolute -top-10 left-4 z-50 bg-primary-500 text-white px-4 py-2 rounded-md transition-all;
+  }
+
+  .skip-to-content:focus {
+    @apply top-4;
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  .dark *:focus-visible {
+    @apply ring-offset-slate-900;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Component layer */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all;
+    @apply focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-100 text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-slate-800 text-slate-100 hover:bg-slate-700 active:bg-slate-600;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-50 active:bg-primary-100;
+  }
+
+  .dark .btn-outline {
+    @apply hover:bg-primary-900/30 active:bg-primary-900/50;
+  }
+
+  .btn-danger {
+    @apply bg-danger-500 text-white hover:bg-danger-600 active:bg-danger-600;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-neutral-200 shadow-sm;
+  }
+
+  .dark .card {
+    @apply bg-slate-900 border-slate-700;
+  }
+
+  .input {
+    @apply w-full px-3 py-2.5 border border-neutral-300 rounded-lg bg-white;
+    @apply focus:border-primary-500 focus:ring-2 focus:ring-primary-100;
+    @apply placeholder:text-neutral-400;
+  }
+
+  .dark .input {
+    @apply bg-slate-800 border-slate-600 text-white placeholder:text-slate-500;
+    @apply focus:ring-primary-900;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-neutral-700 mb-1.5;
+  }
+
+  .dark .label {
+    @apply text-slate-300;
+  }
+}
+
+/* Utility layer */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* GPU-accelerated transforms for animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}

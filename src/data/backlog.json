@@ -1,0 +1,350 @@
+{
+    "tickets": [
+        {
+            "id": "ALIGN-001",
+            "title": "Fix user session timeout handling",
+            "description": "Users are getting logged out unexpectedly during long testing sessions. Need to implement proper token refresh mechanism.",
+            "priority": "high",
+            "storyPoints": 5,
+            "labels": [
+                "bug",
+                "auth",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-15T10:00:00Z",
+            "businessImpact": 8,
+            "technicalComplexity": 5
+        },
+        {
+            "id": "ALIGN-002",
+            "title": "Implement retry logic for flaky tests",
+            "description": "Add configurable retry mechanism for tests that fail due to network issues or timing problems.",
+            "priority": "high",
+            "storyPoints": 3,
+            "labels": [
+                "feature",
+                "reliability",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-16T09:30:00Z",
+            "businessImpact": 7,
+            "technicalComplexity": 4
+        },
+        {
+            "id": "ALIGN-003",
+            "title": "Refactor legacy test runner module",
+            "description": "The test runner module has accumulated technical debt. Needs refactoring for better maintainability.",
+            "priority": "medium",
+            "storyPoints": 8,
+            "labels": [
+                "tech-debt",
+                "refactor"
+            ],
+            "techDebt": true,
+            "dependencies": [],
+            "createdAt": "2025-12-10T14:00:00Z",
+            "businessImpact": 4,
+            "technicalComplexity": 7
+        },
+        {
+            "id": "ALIGN-004",
+            "title": "Add dashboard analytics for test trends",
+            "description": "Create visual dashboard showing test success rates, duration trends, and failure patterns over time.",
+            "priority": "medium",
+            "storyPoints": 5,
+            "labels": [
+                "feature",
+                "analytics",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-17T11:00:00Z",
+            "businessImpact": 6,
+            "technicalComplexity": 5
+        },
+        {
+            "id": "ALIGN-005",
+            "title": "Optimize parallel test execution",
+            "description": "Improve parallel test execution to reduce overall test suite runtime by at least 30%.",
+            "priority": "high",
+            "storyPoints": 8,
+            "labels": [
+                "performance",
+                "feature"
+            ],
+            "techDebt": false,
+            "dependencies": [
+                "ALIGN-003"
+            ],
+            "createdAt": "2025-12-14T08:00:00Z",
+            "businessImpact": 9,
+            "technicalComplexity": 8
+        },
+        {
+            "id": "ALIGN-006",
+            "title": "Fix memory leak in screenshot capture",
+            "description": "Screenshot capture is causing memory issues during long test runs. Need to implement proper cleanup.",
+            "priority": "high",
+            "storyPoints": 3,
+            "labels": [
+                "bug",
+                "performance"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-18T15:00:00Z",
+            "businessImpact": 7,
+            "technicalComplexity": 4
+        },
+        {
+            "id": "ALIGN-007",
+            "title": "Implement custom test reporting format",
+            "description": "Allow users to configure custom report templates for test results export.",
+            "priority": "low",
+            "storyPoints": 5,
+            "labels": [
+                "feature",
+                "reporting"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-12T10:30:00Z",
+            "businessImpact": 4,
+            "technicalComplexity": 5
+        },
+        {
+            "id": "ALIGN-008",
+            "title": "Upgrade authentication to OAuth 2.0",
+            "description": "Migrate from legacy auth system to modern OAuth 2.0 implementation for better security.",
+            "priority": "medium",
+            "storyPoints": 13,
+            "labels": [
+                "security",
+                "auth",
+                "tech-debt"
+            ],
+            "techDebt": true,
+            "dependencies": [
+                "ALIGN-001"
+            ],
+            "createdAt": "2025-12-08T09:00:00Z",
+            "businessImpact": 6,
+            "technicalComplexity": 9
+        },
+        {
+            "id": "ALIGN-009",
+            "title": "Add Slack integration for test notifications",
+            "description": "Send real-time test results and alerts to configured Slack channels.",
+            "priority": "medium",
+            "storyPoints": 5,
+            "labels": [
+                "feature",
+                "integration",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-19T13:00:00Z",
+            "businessImpact": 5,
+            "technicalComplexity": 4
+        },
+        {
+            "id": "ALIGN-010",
+            "title": "Fix cross-browser viewport inconsistencies",
+            "description": "Viewport dimensions are not consistent across different browser types. Need to standardize behavior.",
+            "priority": "high",
+            "storyPoints": 3,
+            "labels": [
+                "bug",
+                "cross-browser"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-20T10:00:00Z",
+            "businessImpact": 6,
+            "technicalComplexity": 3
+        },
+        {
+            "id": "ALIGN-011",
+            "title": "Implement test data cleanup automation",
+            "description": "Automatically clean up test data after test runs to prevent database bloat.",
+            "priority": "medium",
+            "storyPoints": 5,
+            "labels": [
+                "feature",
+                "automation"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-11T16:00:00Z",
+            "businessImpact": 5,
+            "technicalComplexity": 5
+        },
+        {
+            "id": "ALIGN-012",
+            "title": "Add support for visual regression testing",
+            "description": "Integrate visual comparison tools to detect UI changes automatically.",
+            "priority": "medium",
+            "storyPoints": 8,
+            "labels": [
+                "feature",
+                "testing"
+            ],
+            "techDebt": false,
+            "dependencies": [
+                "ALIGN-006"
+            ],
+            "createdAt": "2025-12-13T11:00:00Z",
+            "businessImpact": 7,
+            "technicalComplexity": 6
+        },
+        {
+            "id": "ALIGN-013",
+            "title": "Deprecate legacy API endpoints",
+            "description": "Remove old API v1 endpoints and migrate all clients to v2.",
+            "priority": "low",
+            "storyPoints": 3,
+            "labels": [
+                "tech-debt",
+                "api"
+            ],
+            "techDebt": true,
+            "dependencies": [],
+            "createdAt": "2025-12-09T14:00:00Z",
+            "businessImpact": 3,
+            "technicalComplexity": 4
+        },
+        {
+            "id": "ALIGN-014",
+            "title": "Improve error messages for test failures",
+            "description": "Make error messages more descriptive and actionable when tests fail.",
+            "priority": "medium",
+            "storyPoints": 3,
+            "labels": [
+                "ux",
+                "feature",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-21T09:00:00Z",
+            "businessImpact": 6,
+            "technicalComplexity": 3
+        },
+        {
+            "id": "ALIGN-015",
+            "title": "Add team collaboration features",
+            "description": "Allow team members to share test configurations and results within projects.",
+            "priority": "medium",
+            "storyPoints": 8,
+            "labels": [
+                "feature",
+                "collaboration"
+            ],
+            "techDebt": false,
+            "dependencies": [
+                "ALIGN-008"
+            ],
+            "createdAt": "2025-12-07T10:00:00Z",
+            "businessImpact": 7,
+            "technicalComplexity": 6
+        },
+        {
+            "id": "ALIGN-016",
+            "title": "Optimize database queries for test history",
+            "description": "Test history queries are slow for large datasets. Need index optimization and query refactoring.",
+            "priority": "high",
+            "storyPoints": 5,
+            "labels": [
+                "performance",
+                "database"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-22T08:00:00Z",
+            "businessImpact": 8,
+            "technicalComplexity": 6
+        },
+        {
+            "id": "ALIGN-017",
+            "title": "Implement usage-based billing alerts",
+            "description": "Notify users when they're approaching their plan limits or unusual usage patterns.",
+            "priority": "medium",
+            "storyPoints": 5,
+            "labels": [
+                "feature",
+                "billing",
+                "retention"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-23T11:00:00Z",
+            "businessImpact": 6,
+            "technicalComplexity": 5
+        },
+        {
+            "id": "ALIGN-018",
+            "title": "Fix timezone handling in scheduled tests",
+            "description": "Scheduled tests are running at wrong times for users in different timezones.",
+            "priority": "high",
+            "storyPoints": 3,
+            "labels": [
+                "bug",
+                "scheduling"
+            ],
+            "techDebt": false,
+            "dependencies": [],
+            "createdAt": "2025-12-24T10:00:00Z",
+            "businessImpact": 7,
+            "technicalComplexity": 4
+        }
+    ],
+    "demoStrategies": [
+        {
+            "id": "demo-retention",
+            "name": "Fix Q3 Retention",
+            "description": "Focus on fixing bugs and adding features that reduce user churn",
+            "keywords": [
+                "retention",
+                "bug",
+                "ux",
+                "reliability"
+            ]
+        },
+        {
+            "id": "demo-performance",
+            "name": "Improve Performance",
+            "description": "Optimize system performance and reduce test execution times",
+            "keywords": [
+                "performance",
+                "optimization",
+                "speed"
+            ]
+        },
+        {
+            "id": "demo-security",
+            "name": "Security Hardening",
+            "description": "Address security vulnerabilities and improve authentication",
+            "keywords": [
+                "security",
+                "auth",
+                "vulnerability"
+            ]
+        },
+        {
+            "id": "demo-coffee",
+            "name": "Quick Wins Sprint",
+            "description": "Low-effort, high-impact improvements",
+            "keywords": [
+                "bug",
+                "ux",
+                "quick"
+            ]
+        }
+    ]
+}
