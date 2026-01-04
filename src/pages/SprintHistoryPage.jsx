@@ -172,118 +172,129 @@ export function SprintHistoryPage() {
 
       {/* Header */}
       <header className="!bg-white !border-neutral-200 border-b">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => navigate("/success")}
               aria-label="Go back"
+              className="h-8 w-8 sm:h-10 sm:w-10"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
             <div className="flex items-center gap-2">
               <Logo size="md" className="rounded-lg" />
-              <span className="font-semibold !text-neutral-900">Align</span>
+              <span className="font-semibold !text-neutral-900 text-sm sm:text-base">
+                Align
+              </span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={handleExport}>
-              <Download className="w-4 h-4 mr-1" />
-              Export
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleExport}
+              className="h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3"
+            >
+              <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 sm:mr-1" />
+              <span className="hidden sm:inline">Export</span>
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={handleClearHistory}
-              className="text-red-500 hover:text-red-600 hover:bg-red-50"
+              className="text-red-500 hover:text-red-600 hover:bg-red-50 h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3"
             >
-              <Trash2 className="w-4 h-4 mr-1" />
-              Clear
+              <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 sm:mr-1" />
+              <span className="hidden sm:inline">Clear</span>
             </Button>
           </div>
         </div>
       </header>
 
-      <main id="main-content" className="max-w-6xl mx-auto px-6 py-6">
+      <main
+        id="main-content"
+        className="max-w-6xl mx-auto px-3 sm:px-6 py-4 sm:py-6"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
           {/* Page title */}
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold !text-neutral-900 mb-2">
+          <div className="mb-4 sm:mb-6">
+            <h1 className="text-xl sm:text-2xl font-bold !text-neutral-900 mb-1.5 sm:mb-2">
               Sprint History
             </h1>
-            <p className="!text-neutral-500">
+            <p className="text-sm sm:text-base !text-neutral-500">
               Review past sprints and compare performance metrics
             </p>
           </div>
 
           {/* Summary cards */}
           {averages && (
-            <div className="grid grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 mb-4 sm:mb-6">
               <Card className="!bg-white !border-neutral-200 !text-neutral-900">
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs !text-neutral-500 uppercase">
+                      <p className="text-[10px] sm:text-xs !text-neutral-500 uppercase">
                         Avg Points/Sprint
                       </p>
-                      <p className="text-2xl font-bold !text-neutral-900">
+                      <p className="text-lg sm:text-2xl font-bold !text-neutral-900">
                         {averages.avgPoints}
                       </p>
                     </div>
-                    <BarChart3 className="w-8 h-8 !text-primary-500/30" />
+                    <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 !text-primary-500/30 shrink-0" />
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="!bg-white !border-neutral-200 !text-neutral-900">
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs !text-neutral-500 uppercase">
+                      <p className="text-[10px] sm:text-xs !text-neutral-500 uppercase">
                         Avg Strategic Fit
                       </p>
-                      <p className="text-2xl font-bold !text-primary-600">
+                      <p className="text-lg sm:text-2xl font-bold !text-primary-600">
                         {averages.avgFit}%
                       </p>
                     </div>
-                    <Target className="w-8 h-8 !text-primary-500/30" />
+                    <Target className="w-6 h-6 sm:w-8 sm:h-8 !text-primary-500/30 shrink-0" />
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="!bg-white !border-neutral-200 !text-neutral-900">
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs !text-neutral-500 uppercase">
+                      <p className="text-[10px] sm:text-xs !text-neutral-500 uppercase">
                         Avg Velocity
                       </p>
-                      <p className="text-2xl font-bold !text-emerald-600">
+                      <p className="text-lg sm:text-2xl font-bold !text-emerald-600">
                         {averages.avgVelocity}
                       </p>
                     </div>
-                    <Activity className="w-8 h-8 !text-emerald-500/30" />
+                    <Activity className="w-6 h-6 sm:w-8 sm:h-8 !text-emerald-500/30 shrink-0" />
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="!bg-white !border-neutral-200 !text-neutral-900">
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs !text-neutral-500 uppercase">
+                      <p className="text-[10px] sm:text-xs !text-neutral-500 uppercase">
                         Total Sprints
                       </p>
-                      <p className="text-2xl font-bold !text-neutral-900">
+                      <p className="text-lg sm:text-2xl font-bold !text-neutral-900">
                         {sprintHistory.length}
                       </p>
                     </div>
-                    <Calendar className="w-8 h-8 !text-neutral-400/30" />
+                    <Calendar className="w-6 h-6 sm:w-8 sm:h-8 !text-neutral-400/30 shrink-0" />
                   </div>
                 </CardContent>
               </Card>
@@ -292,12 +303,12 @@ export function SprintHistoryPage() {
 
           {/* Sprint list */}
           <Card className="!bg-white !border-neutral-200 !text-neutral-900">
-            <CardHeader>
-              <CardTitle className="text-base !text-neutral-900">
+            <CardHeader className="px-4 sm:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4">
+              <CardTitle className="text-sm sm:text-base !text-neutral-900">
                 Sprint Timeline
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6">
               {sprintHistory.length === 0 ? (
                 <div className="text-center py-8 !text-neutral-500">
                   No sprint history available
@@ -318,7 +329,7 @@ export function SprintHistoryPage() {
                       <motion.div
                         key={sprint.id}
                         className={cn(
-                          "p-4 rounded-lg border cursor-pointer transition-all",
+                          "p-3 sm:p-4 rounded-lg border cursor-pointer transition-all",
                           selectedSprint === sprint.id
                             ? "!bg-primary-50 !border-primary-200"
                             : "!bg-white !border-neutral-200 hover:!border-primary-200"
@@ -332,38 +343,38 @@ export function SprintHistoryPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4">
-                            <div className="text-center min-w-[50px]">
-                              <p className="text-xs !text-neutral-500">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+                          <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                            <div className="text-center min-w-[45px] sm:min-w-[50px] shrink-0">
+                              <p className="text-[10px] sm:text-xs !text-neutral-500">
                                 {sprintDate.toLocaleDateString("en-US", {
                                   month: "short",
                                 })}
                               </p>
-                              <p className="text-lg font-bold !text-neutral-900">
+                              <p className="text-base sm:text-lg font-bold !text-neutral-900">
                                 {sprintDate.getDate()}
                               </p>
                             </div>
 
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <span className="font-medium !text-neutral-900">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
+                                <span className="font-medium !text-neutral-900 text-sm sm:text-base truncate">
                                   {sprint.name || sprint.strategy || sprint.id}
                                 </span>
-                                <Badge className="!bg-primary-100 !text-primary-700 text-[10px]">
+                                <Badge className="!bg-primary-100 !text-primary-700 text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 shrink-0 self-start sm:self-auto">
                                   {ticketCount} tickets
                                 </Badge>
                               </div>
-                              <p className="text-xs !text-neutral-500 mt-0.5">
+                              <p className="text-[10px] sm:text-xs !text-neutral-500 mt-0.5">
                                 {sprint.id}
                               </p>
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-6">
-                            <div className="text-right">
+                          <div className="grid grid-cols-4 gap-2 sm:flex sm:items-center sm:gap-6 sm:flex-nowrap w-full sm:w-auto">
+                            <div className="text-right sm:text-right">
                               <div className="flex items-center gap-1 justify-end">
-                                <span className="text-sm font-medium !text-neutral-900">
+                                <span className="text-xs sm:text-sm font-medium !text-neutral-900">
                                   {totalPoints} pts
                                 </span>
                                 {getTrendIcon(
@@ -371,14 +382,14 @@ export function SprintHistoryPage() {
                                   getTotalPoints(prevSprint)
                                 )}
                               </div>
-                              <p className="text-[10px] !text-neutral-500">
+                              <p className="text-[9px] sm:text-[10px] !text-neutral-500">
                                 Planned
                               </p>
                             </div>
 
-                            <div className="text-right">
+                            <div className="text-right sm:text-right">
                               <div className="flex items-center gap-1 justify-end">
-                                <span className="text-sm font-medium !text-primary-600">
+                                <span className="text-xs sm:text-sm font-medium !text-primary-600">
                                   {strategicFit}%
                                 </span>
                                 {getTrendIcon(
@@ -386,26 +397,29 @@ export function SprintHistoryPage() {
                                   getStrategicFit(prevSprint)
                                 )}
                               </div>
-                              <p className="text-[10px] !text-neutral-500">
+                              <p className="text-[9px] sm:text-[10px] !text-neutral-500">
                                 Fit
                               </p>
                             </div>
 
-                            <div className="text-right">
+                            <div className="text-right sm:text-right">
                               <div className="flex items-center gap-1 justify-end">
-                                <span className="text-sm font-medium !text-emerald-600">
+                                <span className="text-xs sm:text-sm font-medium !text-emerald-600">
                                   {velocity}
                                 </span>
                                 {getTrendIcon(velocity, prevSprint?.velocity)}
                               </div>
-                              <p className="text-[10px] !text-neutral-500">
+                              <p className="text-[9px] sm:text-[10px] !text-neutral-500">
                                 Velocity
                               </p>
                             </div>
 
-                            <div className="w-24">
-                              <Progress value={capacityUtil} className="h-2" />
-                              <p className="text-[10px] !text-neutral-500 text-right mt-0.5">
+                            <div className="w-full sm:w-24">
+                              <Progress
+                                value={capacityUtil}
+                                className="h-1.5 sm:h-2"
+                              />
+                              <p className="text-[9px] sm:text-[10px] !text-neutral-500 text-right mt-0.5">
                                 {capacityUtil}% capacity
                               </p>
                             </div>
@@ -417,9 +431,9 @@ export function SprintHistoryPage() {
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
-                            className="mt-4 pt-4 !border-neutral-200 border-t"
+                            className="mt-3 sm:mt-4 pt-3 sm:pt-4 !border-neutral-200 border-t"
                           >
-                            <div className="grid grid-cols-4 gap-4 text-sm">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs sm:text-sm">
                               <div>
                                 <p className="!text-neutral-500">AI Refined</p>
                                 <p className="font-medium !text-neutral-900">

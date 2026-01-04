@@ -314,71 +314,78 @@ export function SuccessPage() {
 
       {/* Header */}
       <header className="!bg-white !border-neutral-200 border-b shadow-sm">
-        <div className="max-w-[1600px] mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8"
-              onClick={handleGoHome}
-              aria-label="Go to home page"
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-            <Logo size="md" className="rounded-lg" />
-            <span className="font-semibold !text-neutral-900">Align</span>
-            <span className="!text-neutral-300">|</span>
-            <span className="!text-neutral-500 text-sm">
-              Active Sprint Board
-            </span>
-          </div>
+        <div className="max-w-[1600px] mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 sm:h-8 sm:w-8"
+                onClick={handleGoHome}
+                aria-label="Go to home page"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </Button>
+              <Logo size="md" className="rounded-lg" />
+              <span className="font-semibold !text-neutral-900 text-sm sm:text-base">
+                Align
+              </span>
+              <span className="hidden sm:inline !text-neutral-300">|</span>
+              <span className="hidden sm:inline !text-neutral-500 text-xs sm:text-sm">
+                Active Sprint Board
+              </span>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleViewHistory}
-              aria-label="View sprint history"
-            >
-              <History className="w-4 h-4 mr-1" />
-              History
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleGoHome}
-              aria-label="Go to home page"
-            >
-              <Home className="w-4 h-4 mr-1" />
-              Home
-            </Button>
-            <Button variant="outline" size="sm" onClick={handleExportCsv}>
-              <Download className="w-4 h-4 mr-1" />
-              Export
-            </Button>
-            {/* <Button size="sm" onClick={handleStartNew}>
-              <RotateCcw className="w-4 h-4 mr-1" />
-              New Sprint
-            </Button> */}
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleViewHistory}
+                aria-label="View sprint history"
+                className="h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3"
+              >
+                <History className="w-3.5 h-3.5 sm:w-4 sm:h-4 sm:mr-1" />
+                <span className="hidden sm:inline">History</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleGoHome}
+                aria-label="Go to home page"
+                className="h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3"
+              >
+                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 sm:mr-1" />
+                <span className="hidden sm:inline">Home</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleExportCsv}
+                className="h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3"
+              >
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 sm:mr-1" />
+                <span className="hidden sm:inline">Export</span>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Sprint Progress Bar - The Tracker */}
       <div className="!bg-white !border-neutral-200 border-b">
-        <div className="max-w-[1600px] mx-auto px-4 py-3">
-          <div className="flex items-center justify-between gap-6">
+        <div className="max-w-[1600px] mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
             {/* Left: Sprint info */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
               <div className="flex items-center gap-2">
-                <Target className="w-4 h-4 !text-primary-500" />
+                <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 !text-primary-500" />
                 <span className="text-xs font-medium !text-neutral-700">
                   Sprint Progress
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <Clock className="w-3 h-3 !text-neutral-400" />
                   <span className="text-xs !text-neutral-500">
                     <span className="!text-neutral-800 font-medium">
@@ -388,7 +395,7 @@ export function SuccessPage() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <CheckCircle2 className="w-3 h-3 !text-success-500" />
                   <span className="text-xs !text-neutral-500">
                     <span className="!text-neutral-800 font-medium">
@@ -398,7 +405,7 @@ export function SuccessPage() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <BarChart3 className="w-3 h-3 !text-neutral-400" />
                   <span className="text-xs !text-neutral-500">
                     <span className="!text-neutral-800 font-medium">
@@ -411,30 +418,30 @@ export function SuccessPage() {
             </div>
 
             {/* Center: Progress bar */}
-            <div className="flex-1 max-w-md">
+            <div className="flex-1 max-w-md w-full sm:w-auto">
               <div className="flex items-center gap-2">
                 <Progress
                   value={completionPercent}
                   className="h-2 !bg-neutral-200 flex-1"
                 />
-                <span className="text-xs font-mono !text-neutral-600 w-10">
+                <span className="text-xs font-mono !text-neutral-600 w-10 sm:w-10 shrink-0">
                   {completionPercent}%
                 </span>
               </div>
             </div>
 
             {/* Right: Burndown mini-chart */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="text-right">
-                <p className="text-[10px] !text-neutral-400 uppercase tracking-wide">
+                <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wide">
                   Burndown
                 </p>
               </div>
               <BurndownChart
                 idealData={burndownData.ideal}
                 actualData={burndownData.actual}
-                width={100}
-                height={32}
+                width={80}
+                height={28}
               />
             </div>
           </div>
@@ -442,106 +449,109 @@ export function SuccessPage() {
       </div>
 
       {/* Main content */}
-      <main id="main-content" className="max-w-[1600px] mx-auto px-4 py-4">
+      <main
+        id="main-content"
+        className="max-w-[1600px] mx-auto px-3 sm:px-4 py-3 sm:py-4"
+      >
         {/* Top stats row - Dense */}
-        <div className="grid grid-cols-5 gap-3 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-3 sm:mb-4">
           <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900">
-            <CardContent className="p-3">
+            <CardContent className="p-2.5 sm:p-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] !text-neutral-400 uppercase tracking-wider">
+                  <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wider">
                     Improvement
                   </p>
-                  <p className="text-xl font-bold !text-success-600">
+                  <p className="text-lg sm:text-xl font-bold !text-success-600">
                     +{predictedImprovement}%
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full !bg-success-50 flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 !text-success-500" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full !bg-success-50 flex items-center justify-center shrink-0">
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 !text-success-500" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900">
-            <CardContent className="p-3">
+            <CardContent className="p-2.5 sm:p-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] !text-neutral-400 uppercase tracking-wider">
+                  <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wider">
                     Strategic Fit
                   </p>
-                  <p className="text-xl font-bold !text-primary-600">
+                  <p className="text-lg sm:text-xl font-bold !text-primary-600">
                     {summary.strategicFit}%
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full !bg-primary-50 flex items-center justify-center">
-                  <Target className="w-5 h-5 !text-primary-500" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full !bg-primary-50 flex items-center justify-center shrink-0">
+                  <Target className="w-4 h-4 sm:w-5 sm:h-5 !text-primary-500" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900">
-            <CardContent className="p-3">
+            <CardContent className="p-2.5 sm:p-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] !text-neutral-400 uppercase tracking-wider">
+                  <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wider">
                     AI Refined
                   </p>
-                  <p className="text-xl font-bold !text-purple-600">
+                  <p className="text-lg sm:text-xl font-bold !text-purple-600">
                     {Object.keys(refinedTickets).length}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full !bg-purple-50 flex items-center justify-center">
-                  <Activity className="w-5 h-5 !text-purple-500" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full !bg-purple-50 flex items-center justify-center shrink-0">
+                  <Activity className="w-4 h-4 sm:w-5 sm:h-5 !text-purple-500" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900">
-            <CardContent className="p-3">
+            <CardContent className="p-2.5 sm:p-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] !text-neutral-400 uppercase tracking-wider">
+                  <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wider">
                     Capacity
                   </p>
-                  <p className="text-xl font-bold !text-neutral-800">
+                  <p className="text-lg sm:text-xl font-bold !text-neutral-800">
                     {summary.capacityUtilization}%
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full !bg-neutral-100 flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 !text-neutral-500" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full !bg-neutral-100 flex items-center justify-center shrink-0">
+                  <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 !text-neutral-500" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900">
-            <CardContent className="p-3">
+          <Card className="!bg-white !border-neutral-200 shadow-sm !text-neutral-900 col-span-2 sm:col-span-1">
+            <CardContent className="p-2.5 sm:p-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] !text-neutral-400 uppercase tracking-wider">
+                  <p className="text-[9px] sm:text-[10px] !text-neutral-400 uppercase tracking-wider">
                     Team
                   </p>
-                  <div className="flex -space-x-2 mt-1">
+                  <div className="flex -space-x-1.5 sm:-space-x-2 mt-1">
                     {TEAM_MEMBERS.slice(0, 4).map((member) => (
                       <div
                         key={member.id}
-                        className="w-6 h-6 rounded-full border-2 !border-white flex items-center justify-center text-[9px] font-bold text-white shadow-sm"
+                        className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 !border-white flex items-center justify-center text-[8px] sm:text-[9px] font-bold text-white shadow-sm"
                         style={{ backgroundColor: member.color }}
                         title={`${member.name} (${member.role})`}
                       >
                         {member.initials}
                       </div>
                     ))}
-                    <div className="w-6 h-6 rounded-full border-2 !border-white !bg-neutral-200 flex items-center justify-center text-[9px] !text-neutral-500 shadow-sm">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 !border-white !bg-neutral-200 flex items-center justify-center text-[8px] sm:text-[9px] !text-neutral-500 shadow-sm">
                       +1
                     </div>
                   </div>
                 </div>
-                <div className="w-10 h-10 rounded-full !bg-neutral-100 flex items-center justify-center">
-                  <Users className="w-5 h-5 !text-neutral-500" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full !bg-neutral-100 flex items-center justify-center shrink-0">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 !text-neutral-500" />
                 </div>
               </div>
             </CardContent>
@@ -549,23 +559,23 @@ export function SuccessPage() {
         </div>
 
         {/* Data Grid */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-sm font-semibold !text-neutral-800">
+        <div className="mb-3 sm:mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-2">
+            <h2 className="text-xs sm:text-sm font-semibold !text-neutral-800">
               Sprint Backlog
             </h2>
-            <div className="flex items-center gap-2">
-              <Badge className="!bg-neutral-100 !text-neutral-600 text-[10px]">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+              <Badge className="!bg-neutral-100 !text-neutral-600 text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5">
                 {tickets.filter((t) => t.status === "todo").length} To Do
               </Badge>
-              <Badge className="!bg-primary-50 !text-primary-600 text-[10px]">
+              <Badge className="!bg-primary-50 !text-primary-600 text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5">
                 {tickets.filter((t) => t.status === "in_progress").length} In
                 Progress
               </Badge>
-              <Badge className="!bg-purple-50 !text-purple-600 text-[10px]">
+              <Badge className="!bg-purple-50 !text-purple-600 text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5">
                 {tickets.filter((t) => t.status === "review").length} Review
               </Badge>
-              <Badge className="!bg-success-50 !text-success-600 text-[10px]">
+              <Badge className="!bg-success-50 !text-success-600 text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5">
                 {tickets.filter((t) => t.status === "done").length} Done
               </Badge>
             </div>
@@ -583,10 +593,10 @@ export function SuccessPage() {
 
         {/* Warnings panel */}
         {summary.warnings && summary.warnings.length > 0 && (
-          <Card className="!bg-warning-50 !border-warning-200 mb-4 !text-neutral-900">
-            <CardContent className="p-3">
-              <div className="flex items-start gap-2">
-                <AlertTriangle className="w-4 h-4 !text-warning-600 shrink-0 mt-0.5" />
+          <Card className="!bg-warning-50 !border-warning-200 mb-3 sm:mb-4 !text-neutral-900">
+            <CardContent className="p-2.5 sm:p-3">
+              <div className="flex items-start gap-1.5 sm:gap-2">
+                <AlertTriangle className="w-3.5 h-3.5 sm:w-4 sm:h-4 !text-warning-600 shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs font-medium !text-warning-700">
                     Active Warnings
